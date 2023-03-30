@@ -1,0 +1,24 @@
+<div>
+  <div>{{name}} the Level {{level}} {{class}}</div>
+  <br>
+  <div>Experience: {{experience}}</div>
+  <br>
+  <div>Personality: {{personality}}</div>
+  <br>
+  <!-- <div>Stats</div>
+  <ul>
+    <li>Constitution: {{constitution}}</li>
+    <li>Strength: {{strength}}</li>
+    <li>Dexterity: {{dexterity}}</li>
+    <li>Intelligence: {{intelligence}}</li>
+    <li>Spirit: {{spirit}}</li>
+    <li>Luck: {{luck}}</li>
+  </ul> -->
+  <div *ngIf="travelTime > 0">Traveling...</div>
+  <div *ngIf="hasQuest">
+    <div>Task: {{questTask}}</div>
+    <app-progress-bar [value]="questStatus" [max]="questQuantity"></app-progress-bar>
+  </div>
+</div>
+
+

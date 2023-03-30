@@ -1,0 +1,12 @@
+<div>Day {{day}}  [{{hour}}:{{minute}}]</div><button (click)="running ? pause() : resume()">{{running ? 'Pause' : 'Resume'}}</button>
+<div>Gold: {{gold}}</div>
+<div>Reputation: {{reputation}}</div>
+<div>Specialization: {{specialization}}</div>
+<div>AdventurerSlots: {{adventurers}} / {{adventurerSlots}}</div>
+<div>BoardSlots: {{quests}} / {{boardSlots}}</div>
+<div class="break"></div>
+<div class="tab"
+  *ngFor="let tName of tabs"
+  [style.background]="tab === tName ? '#FFFFFF' : '#DDDDDD'"
+  (mouseup)="selectTab(tName)"
+>{{tName}}</div>

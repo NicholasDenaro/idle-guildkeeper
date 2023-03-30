@@ -1,0 +1,23 @@
+<div>
+  <div *ngIf="!accepted">[Request]</div>
+  <br *ngIf="!accepted">
+  <div *ngIf="complete">[Complete]</div>
+  <br *ngIf="complete">
+  <div *ngIf="!complete && started">[Started]</div>
+  <br *ngIf="!complete && started">
+  <div>{{task}}: Level {{level}}</div>
+  <br>
+  <div>Location: {{location}}</div>
+  <br>
+  <div>Gold: {{reward.gold || 0}}</div>
+  <br>
+  <div>Experience: {{reward.experience || 0}}</div>
+  <br>
+  <div>Quantity: {{quantity}}</div>
+  <br>
+  <div>Due: Day {{due}} {{dueHour}}:{{dueMinute}}</div>
+  <!-- <div *ngIf="!accepted" class="button-group">
+    <div class="button" (click)="accept()">Accept</div>
+    <div class="button" (click)="reject()">Reject</div>
+  </div> -->
+</div>

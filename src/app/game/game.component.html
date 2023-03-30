@@ -1,0 +1,38 @@
+<app-header
+  [day]="day"
+  [time]="time"
+  [gold]="gold"
+  [alignment]="alignment"
+  [specialization]="specialization"
+  [adventurerSlots]="adventurerSlots"
+  [boardSlots]="boardSlots"
+  [reputation]="reputation"
+  [adventurers]="adventurers"
+  [quests]="quests"
+  (tabSelected)="selectTab($event)"
+  [tab]="tab"
+></app-header>
+
+<div *ngIf="tab === 'Guild'" class="quest-view">
+  <div class="adventurers">
+    <ng-template view="adventurers"></ng-template>
+  </div>
+  <div class="quest-board">
+    <ng-template view="quests"></ng-template>
+    <div *ngFor="let i of Arr(boardSlots - quests).fill(1)" class="quest-slot"></div>
+  </div>
+  <div class="requests">
+    <ng-template view="requests"></ng-template>
+  </div>
+  <div class="complete-quests">
+    <ng-template view="complete quests"></ng-template>
+  </div>
+</div>
+
+<div *ngIf="tab === 'Upgrades'" class="upgrades">
+  <ng-template view="upgrades"></ng-template>
+</div>
+
+<div *ngIf="tab === 'Recruit'" class="recruit">
+  <ng-template view="recruit"></ng-template>
+</div>
